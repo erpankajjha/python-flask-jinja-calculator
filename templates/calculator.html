@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .display {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            border: none;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #e6e6e6;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .button {
+            width: 100%;
+            padding: 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #d4d4d4;
+            cursor: pointer;
+        }
+        .button.operation {
+            background-color: #ff9500;
+            color: #fff;
+        }
+        .button.memory {
+            background-color: #007aff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <form method="POST">
+            <input type="text" class="display" name="expression" value="{{ expression }}" readonly>
+            <div class="buttons">
+                <button type="submit" name="action" value="7" class="button">7</button>
+                <button type="submit" name="action" value="8" class="button">8</button>
+                <button type="submit" name="action" value="9" class="button">9</button>
+                <button type="submit" name="action" value="+" class="button operation">+</button>
+                <button type="submit" name="action" value="4" class="button">4</button>
+                <button type="submit" name="action" value="5" class="button">5</button>
+                <button type="submit" name="action" value="6" class="button">6</button>
+                <button type="submit" name="action" value="-" class="button operation">-</button>
+                <button type="submit" name="action" value="1" class="button">1</button>
+                <button type="submit" name="action" value="2" class="button">2</button>
+                <button type="submit" name="action" value="3" class="button">3</button>
+                <button type="submit" name="action" value="*" class="button operation">*</button>
+                <button type="submit" name="action" value="0" class="button">0</button>
+                <button type="submit" name="action" value="." class="button">.</button>
+                <button type="submit" name="action" value="clear" class="button">C</button>
+                <button type="submit" name="action" value="/" class="button operation">/</button>
+                <button type="submit" name="action" value="memory_add" class="button memory">M+</button>
+                <button type="submit" name="action" value="memory_subtract" class="button memory">M-</button>
+                <button type="submit" name="action" value="memory_clear" class="button memory">MC</button>
+                <button type="submit" name="action" value="memory_recall" class="button memory">MR</button>
+                <button type="submit" name="action" value="calculate" class="button operation" style="grid-column: span 4;">=</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
